@@ -23,3 +23,5 @@ Once in AWS systems Manager check your network interfaces by showing IP address
 Apply a security Update
 
         sudo yum update --security -y
+
+![image alt](https://github.com/DMayrant/AWS-Systems-Manager/blob/main/SSM.jpeg?raw=true)        
