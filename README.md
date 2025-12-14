@@ -24,6 +24,10 @@ Apply a security Update
 
         sudo yum update --security -y
 
+Detailed systems logs 
+
+        journalctl -xe
+
 ![image alt](https://github.com/DMayrant/AWS-Systems-Manager/blob/main/SSM.jpeg?raw=true)  
 
 ![image alt](https://github.com/DMayrant/AWS-Systems-Manager/blob/main/Screenshot%202568-12-13%20at%2023.52.23.png?raw=true)
