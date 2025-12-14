@@ -16,6 +16,19 @@ This service allows you to safely monitor your servers from a security complianc
 
 🔐 The goal for securing public EC2 instances is to enforce the PoLP and zero-trust with IAM, and to use HTTPS tcp 443 over HTTP tcp 80 for SSL/TLS encyption for data packets in transit and to avoid opening SSH port 22 to reduce attack surface. Only open the necessary ports. Place a ALB in front of your public EC2 with a WAF security backend for your ALB for compliance with OWASP top 10. Do not store access secrets keys on disk, use SSM secretes manager. 
 
+correct            
+SSM ✅
+ALB✅
+VPC Endpoint✅
+NAT✅
+SG rule for HTTPS tcp port 443✅
+
+incorrect/No longer best practice 
+SSH tcp port 22🚫
+Bastion Host🚫
+relying on IGW🚫
+deploying servers in public subnet🚫
+
 Once in AWS systems Manager check your network interfaces by showing IP address
         
         ifconfig
