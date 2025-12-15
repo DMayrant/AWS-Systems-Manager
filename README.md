@@ -14,9 +14,8 @@ This service allows you to safely monitor your servers from a security complianc
 
 ✅ The goal is for your private EC2 instances to have full egress at the Security Group layer, while maintaining egress control using a Network Address Translation (NAT), VPC endpoints, and routing. This prevents the DNS and AWS dependencies from breaking. Ingress traffic is locked down using SSM.
 
-🔐 The goal for securing public EC2 instances is to enforce the PoLP and zero-trust with IAM, and to use HTTPS tcp 443 over HTTP tcp 80 for SSL/TLS encyption for data packets in transit and to avoid opening SSH port 22 to reduce attack surface. Only open the necessary ports. Place a ALB in front of your public EC2 with a WAF security backend for your ALB for compliance with OWASP top 10. Do not store access secrets keys on disk, use SSM secretes manager. 
-
-Once in AWS systems Manager check your network interfaces by showing IP address
+🔐 The goal for securing public EC2 instances is to enforce the PoLP and zero-trust with IAM and MFA, and to use HTTPS tcp 443 over HTTP tcp 80 for SSL/TLS encyption for data packets in transit and to avoid opening SSH port 22 to reduce attack surface. Only open the necessary ports. Place a ALB in front of your public EC2 with a WAF security backend for your ALB for compliance with OWASP top 10. configure CloudWatch to monitor your instances metrics, alarms and performance and cloud trail to monitor all API activity within your network. Use VPC flow logs and send them to S3 with a GuardDuty security backend for threat detection. Do not store access secrets keys on disk, use SSM secretes manager.   
+Once in AWS systems Manager check your network interfaces by showing IP address.
         
         ifconfig
 
@@ -27,6 +26,10 @@ Apply a security Update
 Detailed systems logs 
 
         journalctl -xe
+
+to chack for connection within your network
+
+        tcpdump
 
 ![image alt](https://github.com/DMayrant/AWS-Systems-Manager/blob/main/SSM.jpeg?raw=true)  
 
